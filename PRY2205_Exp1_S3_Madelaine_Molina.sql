@@ -16,7 +16,7 @@ SELECT
         || '-' || c.dvrut_cli                      AS "RUT Cliente",
     INITCAP(c.appaterno_cli || ' ' || c.apmaterno_cli || ' ' || c.nombre_cli) AS "Nombre Completo Cliente",
     c.direccion_cli                               AS "Dirección Cliente",
-    TO_CHAR(c.renta_cli, '$$999G999G999')          AS "Renta Cliente",
+    TO_CHAR(c.renta_cli, '$999G999G999')          AS "Renta Cliente",
     TO_CHAR(c.celular_cli)                        AS "Celular Cliente",
 
     CASE
@@ -85,3 +85,4 @@ GROUP BY
     UPPER(tp.desc_tipo_propiedad)
 HAVING AVG(p.valor_arriendo / p.superficie) > 1000
 ORDER BY AVG(p.valor_arriendo / p.superficie) DESC;
+
